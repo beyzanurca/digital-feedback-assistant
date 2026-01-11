@@ -6,7 +6,6 @@ function geriBildirimVer() {
     const scoreDetail = document.getElementById("scoreDetail");
     const suggestion = document.getElementById("suggestion");
 
-    // Boş cevap kontrolü
     if (cevap.trim() === "") {
         feedback.innerText = "Lütfen bir cevap giriniz.";
         score.innerText = "";
@@ -15,10 +14,8 @@ function geriBildirimVer() {
         return;
     }
 
-    // Geri bildirim
     feedback.innerText = "Cevabınız başarıyla alınmıştır.";
 
-    // Puanlama
     let puan = 0;
 
     if (cevap.length < 50) {
@@ -29,17 +26,14 @@ function geriBildirimVer() {
         puan = 90;
     }
 
-    // Puan gösterimi
     score.innerText = "Puan: " + puan;
 
-    // Puan açıklaması
     scoreDetail.innerText =
         "Bu puan, cevabın uzunluğu ve temel içerik yeterliliği dikkate alınarak otomatik olarak hesaplanmıştır.";
 
-    // Geliştirme önerisi
     if (puan < 50) {
         suggestion.innerText =
-            "Cevabınızı daha ayrıntılı yazarak ve anahtar kavramlara yer vererek puanınızı yükseltebilirsiniz.";
+            "Cevabınızı daha ayrıntılı yazarak ve anahtar kavramlara yer vererek puanınızı artırabilirsiniz.";
     } else if (puan < 80) {
         suggestion.innerText =
             "Cevabınıza örnekler ekleyerek cevabınızı daha güçlü hale getirebilirsiniz.";
