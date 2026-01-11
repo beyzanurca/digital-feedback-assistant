@@ -1,20 +1,24 @@
 function geriBildirimVer() {
     const cevap = document.getElementById("cevap").value;
-    const feedbackAlan = document.getElementById("feedback");
-    const scoreAlan = document.getElementById("score");
+
+    const feedback = document.getElementById("feedback");
+    const score = document.getElementById("score");
     const scoreDetail = document.getElementById("scoreDetail");
     const suggestion = document.getElementById("suggestion");
 
+    // Boş cevap kontrolü
     if (cevap.trim() === "") {
-        feedbackAlan.innerText = "Lütfen bir cevap giriniz.";
-        scoreAlan.innerText = "";
+        feedback.innerText = "Lütfen bir cevap giriniz.";
+        score.innerText = "";
         scoreDetail.innerText = "";
         suggestion.innerText = "";
         return;
     }
 
-    feedbackAlan.innerText = "Cevabınız başarıyla alınmıştır.";
+    // Geri bildirim
+    feedback.innerText = "Cevabınız başarıyla alınmıştır.";
 
+    // Puanlama
     let puan = 0;
 
     if (cevap.length < 50) {
@@ -25,18 +29,22 @@ function geriBildirimVer() {
         puan = 90;
     }
 
-    scoreAlan.innerText = "Puan: " + puan;
-    scoreDetail.innerText =
-        "Puanlama; cevap uzunluğu ve temel içerik yeterliliği dikkate alınarak otomatik olarak yapılmıştır.";
+    // Puan gösterimi
+    score.innerText = "Puan: " + puan;
 
+    // Puan açıklaması
+    scoreDetail.innerText =
+        "Bu puan, cevabın uzunluğu ve temel içerik yeterliliği dikkate alınarak otomatik olarak hesaplanmıştır.";
+
+    // Geliştirme önerisi
     if (puan < 50) {
         suggestion.innerText =
-            "Cevabınızı daha ayrıntılı yazarak ve temel kavramlara yer vererek puanınızı artırabilirsiniz.";
+            "Cevabınızı daha ayrıntılı yazarak ve anahtar kavramlara yer vererek puanınızı yükseltebilirsiniz.";
     } else if (puan < 80) {
         suggestion.innerText =
-            "Cevabınıza örnekler ekleyerek daha güçlü bir cevap oluşturabilirsiniz.";
+            "Cevabınıza örnekler ekleyerek cevabınızı daha güçlü hale getirebilirsiniz.";
     } else {
         suggestion.innerText =
-            "Cevabınız oldukça yeterli. Bu düzeyi koruyabilirsiniz.";
+            "Cevabınız oldukça yeterlidir. Bu performansı koruyabilirsiniz.";
     }
 }
