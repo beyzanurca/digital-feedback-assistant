@@ -1,1 +1,23 @@
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f9f9f9;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#feedback {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e6f2ff;
+    border-left: 4px solid #007acc;
+}
