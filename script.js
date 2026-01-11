@@ -70,7 +70,20 @@ function ogretmenYorumEkle() {
     scoreAlan.innerText = "Puan: " + puan;
 
     localStorage.setItem("ogrenciPuani", puan);
-}
+}window.onload = function () {
+    const kayitliPuan = localStorage.getItem("ogrenciPuani");
+    if (kayitliPuan) {
+        document.getElementById("score").innerText =
+            "Puan: " + kayitliPuan;
+    }
+
+    const kayitliYorum = localStorage.getItem("ogretmenYorumu");
+    if (kayitliYorum) {
+        document.getElementById("teacherFeedback").innerText =
+            "Öğretmen Yorumu: " + kayitliYorum;
+    }
+};
+
 
  
 
