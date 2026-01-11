@@ -78,7 +78,17 @@ function ogretmenYorumEkle() {
     if (kayitliPuan) {
         document.getElementById("score").innerText =
             "Puan: " + kayitliPuan;
-    }
+        
+    }const suggestion = document.getElementById("suggestion");
+
+if (puan < 50) {
+    suggestion.innerText = "Cevabınızı daha ayrıntılı yazarak puanınızı yükseltebilirsiniz.";
+} else if (puan < 80) {
+    suggestion.innerText = "Örnekler ekleyerek cevabınızı daha güçlü hale getirebilirsiniz.";
+} else {
+    suggestion.innerText = "Cevabınız oldukça iyi. Bu düzeyi koruyabilirsiniz.";
+}
+
 
     const kayitliYorum = localStorage.getItem("ogretmenYorumu");
     if (kayitliYorum) {
