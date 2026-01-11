@@ -18,6 +18,7 @@ function geriBildirimVer() {
     }
 }
 function ogretmenYorumEkle() {
+  function ogretmenYorumEkle() {
     const yorum = document.getElementById("teacherComment").value;
     const alan = document.getElementById("teacherFeedback");
 
@@ -26,6 +27,14 @@ function ogretmenYorumEkle() {
         return;
     }
 
+    localStorage.setItem("ogretmenYorumu", yorum);
     alan.innerText = "Öğretmen Yorumu: " + yorum;
 }
+   window.onload = function () {
+    const kayitliYorum = localStorage.getItem("ogretmenYorumu");
+    if (kayitliYorum) {
+        document.getElementById("teacherFeedback").innerText =
+            "Öğretmen Yorumu: " + kayitliYorum;
+    }
+ 
 
