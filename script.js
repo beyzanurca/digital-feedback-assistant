@@ -17,4 +17,15 @@ function geriBildirimVer() {
         feedback.innerText = "Cevabınız yeterince açıklayıcı görünüyor. Başarılı bir yanıt.";
     }
 }
+function ogretmenYorumEkle() {
+    const yorum = document.getElementById("teacherComment").value;
+    const alan = document.getElementById("teacherFeedback");
+
+    if (yorum.trim() === "") {
+        alan.innerText = "Öğretmen yorumu boş bırakılamaz.";
+        return;
+    }
+
+    alan.innerText = "Öğretmen Yorumu: " + yorum;
+}
 
