@@ -67,7 +67,10 @@ function ogretmenYorumEkle() {
         puan = 100;
     }
 
-    scoreAlan.innerText = "Puan: " + puan;
+    scoreAlan.innerText = "Puan: " + puan; 
+        document.getElementById("scoreDetail").innerText =
+    "Puanlama kriteri: Cevap uzunluğu ve anahtar kelime kullanımı dikkate alınmıştır.";
+
 
     localStorage.setItem("ogrenciPuani", puan);
 }window.onload = function () {
